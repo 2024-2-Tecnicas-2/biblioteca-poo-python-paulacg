@@ -6,15 +6,36 @@ import unittest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 class TestLibro(unittest.TestCase):
-    # TODO Adiciona tus pruebas unitarias aquí.
-    # Ejemplo:
-    '''
-    def test_multiplicar_positivos(self):
-        valor_esperado = 15
-        mi_cuenta = CuentaBancaria()
-        valor_actual = mi_cuenta.multiplicar(3, 5)
-        self.assertEqual(valor_esperado, valor_actual)
-    '''
-        
-if __name__ == '__main__':
+ def setUp(self):
+        self.libro = Libro("Satanás", 2002, "Mario Mendoza", 280)
+
+    def test_get_autor(self):
+        self.assertEqual(self.libro.autor, "Mario Mendoza")
+
+    def test_set_autor(self):
+        self.libro.autor = "Mario Mendoza"
+        self.assertEqual(self.libro.autor, "Mario Mendoza")
+
+    def test_get_numero_paginas(self):
+        self.assertEqual(self.libro.numero_paginas, 280)
+
+    def test_set_numero_paginas(self):
+        self.libro.numero_paginas = 280
+        self.assertEqual(self.libro.numero_paginas, 280)
+
+    def test_get_titulo(self):
+        self.assertEqual(self.libro.titulo, "Satanás")
+
+    def test_set_titulo(self):
+        self.libro.titulo = "Satanás"
+        self.assertEqual(self.libro.titulo, "Satanás")
+
+    def test_get_ano_publicacion(self):
+        self.assertEqual(self.libro.ano_publicacion, 2002)
+
+    def test_set_ano_publicacion(self):
+        self.libro.ano_publicacion = 2002
+        self.assertEqual(self.libro.ano_publicacion, 2002)
+
+if __name__ == "__main__":
     unittest.main()
